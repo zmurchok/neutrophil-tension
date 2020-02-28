@@ -1,4 +1,4 @@
-#Source Code
+## Source Code
 
 This repository contains code used to generate figures for our paper on mechanosensing as an adaptation for neutrophil polarity.
 
