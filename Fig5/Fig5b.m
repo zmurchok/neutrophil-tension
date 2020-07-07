@@ -1,5 +1,6 @@
 bettercolors
-
+bright(6,:) = [0,0,0]
+bright(2,:) = [0.5,0.5,0.5]
 % figure;
 % hold on
 % %
@@ -29,7 +30,7 @@ set(gca,'LineWidth',1.5)
 bvals = linspace(0.5,5,10);
 
 bI = bvals(1:2);
-bII = bvals(3);
+bII = bvals(4);
 bIII = bvals(8);
 bIV = bvals(end);
 
@@ -57,7 +58,7 @@ for j = 1:length(bIII)
   % scatter(bvalue+bvalue*t/35000,l,16,color,'filled')
   % scatter(active_u,l,8,color,'filled')
   scatter(Fig1a,t,l,10,color,'filled')
-  xlim([0 2000])
+  xlim([0 200])
 
 
   Fig1b = subplot(2,2,3);
@@ -72,7 +73,7 @@ for j = 1:length(bIII)
   grid
 
   scatter(Fig1b,t,differences,10,color,'filled')
-  xlim([0 2000])
+  xlim([0 200])
 
 end
 
@@ -114,7 +115,7 @@ for j = 1:length(bII)
   % scatter(bvalue+bvalue*t/35000,l,16,color,'filled')
   % scatter(active_u,l,8,color,'filled')
   scatter(Fig1c,t,l,10,color,'filled')
-  xlim([0 2000])
+  xlim([0 200])
 
 
 
@@ -130,7 +131,7 @@ for j = 1:length(bII)
   grid
 
   scatter(Fig1d,t,differences,10,color,'filled')
-  xlim([0 2000])
+  xlim([0 200])
 
 end
 

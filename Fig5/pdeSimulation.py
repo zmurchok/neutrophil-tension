@@ -24,12 +24,12 @@ def F(R):
 
 def xmdot(u,v,xm,xp,t):
     viscosity = 1
-    spring = 0.001
+    spring = 0.01
     return (spring*(xp-xm-1) - F(u[0]))/viscosity
 
 def xpdot(u,v,xm,xp,t):
     viscosity = 1
-    spring = 0.001
+    spring = 0.01
     return (-spring*(xp-xm-1) + F(u[-1]))/viscosity
 
 def rdPDE(y, t, b, gamma, n, RT, delta, Du, Dv, dx, bjump):
@@ -47,10 +47,10 @@ def rdPDE(y, t, b, gamma, n, RT, delta, Du, Dv, dx, bjump):
 
     l = xp-xm
 
-    if (t>50):
+    if (t>0):
         b = bjump
 
-    delta = 3 + 1*(l-1)
+    delta = 3 + 80*(l-1)
 
     # dydt is the return value of this function.
     dydt = np.empty_like(y)
@@ -87,7 +87,7 @@ def pdesimulation(bjump):
     dx = 1/N
     T = 5000
     M = 2500
-    t = np.linspace(0, T, M)
+    t = np.linspace(-5, T, M)
 
     b, gamma, n, RT, delta = 0.1, 5, 6, 2, 3
     # b, gamma, n, RT, delta = 0.1, 5, 6, 2.5, 3

@@ -1,0 +1,9 @@
+R' = A(R)*(RT-R)-delta*R
+Rl' =  A(Rl)*(RT-R)-delta*Rl
+
+A(R) = (b+gamma*R^n/(1+R^n))
+
+par b=4,RT=2,delta=5,gamma=5,n=6
+
+@ total=200,xp=t,yp=Rl,dt=0.05,xlo=0,xhi=4,ylo=0,yhi=4,dsmin=0.00001,dsmax=0.001,Npr=500
+done

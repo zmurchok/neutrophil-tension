@@ -1,29 +1,41 @@
+%FIRST DO THIS
+% load('/Users/zmurchc/Dropbox/Apps/Overleaf/neutrophil-tension-paper/code/revisions/Fig5/xppdat.mat')
+% plotxppaut4p4
+%PLOT Fig5LPA.dat
+%SAVE THIS FIGURE
+
+
+close all
+clear all
+
+
 bettercolors
-uiopen('/Users/zmurchc/Dropbox/Apps/Overleaf/neutrophil-tension-paper/code/Fig5/RT_2.fig',1)
-% figure;
-% hold on
-% %
-% width=5.2;
-% height=5.2/2;
-% x0 = 5;
-% y0 = 5;
-% fontsize = 12;
+uiopen('/Users/zmurchc/Dropbox/Apps/Overleaf/neutrophil-tension-paper/code/revisions/Fig5/Fig5LPA.fig',1)
+
+
+
+% pause
+%
+width=5.2;
+height=5.2/2;
+x0 = 5;
+y0 = 5;
+fontsize = 12;
+set(gcf,'Units','inches','Position',[x0 y0 width/2 height],'PaperPositionMode','auto')
 % figure('Units','inches','Position',[x0 y0 width/2 height],'PaperPositionMode','auto');
 % Fig1b = subplot(1,1,1);
-% % xlabel(Fig1b,{'$b$'},'FontUnits','points','Interpreter','latex','FontWeight','normal','FontSize',fontsize,'FontName','Times')
-% % ylabel(Fig1b,{'$b$'},'FontUnits','points','Interpreter','latex','FontWeight','normal','FontSize',fontsize,'FontName','Times')
-%
-% set(Fig1b,'Units','normalized','FontUnits','points','FontWeight','normal','FontSize',fontsize,'FontName','Times')
-% hold on
-% grid
-% Fig1b.XLim = [0 5.5];
-% Fig1b.YLim = [0 1.6];
+xlabel({'$b$'},'Interpreter','latex','FontWeight','normal','FontSize',fontsize,'FontName','Times')
+ylabel({'$L$'},'Interpreter','latex','FontWeight','normal','FontSize',fontsize,'FontName','Times')
+
+% set(gca,'Units','normalized','FontWeight','normal','FontSize',fontsize,'FontName','Times')
+hold on
+grid
+xlim([0 5.5])
+ylim([0.96 1.07])
 % Fig1b.Box = 'on';
-% ylabel({'$L$'},'FontUnits','points','Interpreter','latex','FontWeight','normal','FontSize',fontsize,'FontName','Times')
-% xlabel({''},'FontUnits','points','Interpreter','latex','FontWeight','normal','FontSize',fontsize,'FontName','Times')
-
-% set(gca,'LineWidth',1.5)
-
+set(gca,'LineWidth',1.5)
+set(gca,'Box','on')
+legend('off')
 
 bvals = linspace(0.5,5,10);
 for j = 1:length(bvals)
@@ -51,6 +63,6 @@ for j = 1:length(bvals)
   % ylim([0.98 1.37])
   % xlim([0 1.4])
 end
-ylim([0 1.85])
+% ylim([0 1.85])
 
-print(1,'Fig5a','-depsc','-painters')
+% print(1,'Fig5a','-depsc','-painters')
